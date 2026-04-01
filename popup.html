@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="popup/popup.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <div class="logo-bars">
+        <span class="logo-bar"></span>
+        <span class="logo-bar"></span>
+        <span class="logo-bar"></span>
+        <span class="logo-bar"></span>
+      </div>
+      <span class="logo-text">Cue</span>
+    </div>
+    <span class="version">v1.0.0</span>
+  </div>
+
+  <!-- Empty state -->
+  <div id="empty-state" class="empty-state" style="display: none;">
+    <div class="empty-icon">&#9744;</div>
+    <div class="empty-title">No prompts scored yet</div>
+    <div class="empty-desc">Start typing on claude.ai to see your stats here.</div>
+  </div>
+
+  <!-- Stats -->
+  <div id="stats-section">
+
+    <!-- Score card -->
+    <div class="score-card">
+      <div class="score-big" id="avg-score">--</div>
+      <div class="score-label">Average Cue Score</div>
+      <div class="score-sub" id="total-prompts">0 prompts scored</div>
+    </div>
+
+    <!-- Trend row -->
+    <div class="stat-row">
+      <div class="stat-box">
+        <div class="stat-value" id="score-this-week">--</div>
+        <div class="stat-label">This week</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" id="score-trend">--</div>
+        <div class="stat-label">Trend</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-value" id="acceptance-rate">--%</div>
+        <div class="stat-label">Rewrites used</div>
+      </div>
+    </div>
+
+    <!-- Weakest dimension -->
+    <div class="weakness-card" id="weakness-card" style="display: none;">
+      <div class="weakness-header">
+        <span class="weakness-dim" id="weakness-dim">--</span>
+        <span class="weakness-badge">Weakest</span>
+      </div>
+      <div class="weakness-tip" id="weakness-tip"></div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <button class="clear-btn" id="clear-btn">Clear Stats</button>
+  </div>
+
+  <script src="popup/popup.js"></script>
+</body>
+</html>

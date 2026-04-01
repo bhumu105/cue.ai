@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Cue",
+  "version": "1.0.0",
+  "description": "See how Claude reads your prompt. Score it. Improve it.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["https://claude.ai/*"],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://claude.ai/*"],
+      "js": [
+        "lib/ort.min.js",
+        "src/scorer.js",
+        "src/perception.js",
+        "src/rewriter.js",
+        "src/tracker.js",
+        "src/ui.js",
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "model/cue_model.onnx",
+        "model/vocab.json",
+        "lib/ort-wasm-simd-threaded.wasm",
+        "lib/ort-wasm-simd-threaded.mjs"
+      ],
+      "matches": ["https://claude.ai/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

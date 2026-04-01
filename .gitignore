@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Large ML model files (exceed GitHub 100MB limit)
+# Regenerate with: cd ml && python export.py
+ml/best_model/model.pt
+ml/cue_model.onnx.data
+
+# Training dataset (29MB, contains crowd-sourced prompts that trigger secret scanning)
+# Regenerate with: cd ml && python label.py
+ml/labeled_dataset.jsonl
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
