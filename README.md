@@ -17,6 +17,13 @@ As you type a prompt on claude.ai, Cue continuously evaluates it across **four d
 
 Each dimension is scored 0–5, producing an overall **Cue Score (0–100)**.
 
+## Screenshots
+
+| Live Scoring | Rewrite Suggestion | Stats Dashboard |
+| --- | --- | --- |
+| ![Signal bars rendering](docs/screenshot-scoring.png) | ![Diff modal with rewrite](docs/screenshot-rewrite.png) | ![Popup stats dashboard](docs/screenshot-stats.png) |
+| *Real-time dimension scoring as you type* | *Side-by-side diff with score improvement* | *Weekly trends, weakest dimension, acceptance rate* |
+
 ### Features
 
 - **Live Signal Bars** — Color-coded bars (red → green) update as you type, showing your score and a verdict ("Waste of tokens" → "Airtight")
